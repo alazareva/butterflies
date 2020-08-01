@@ -39,7 +39,7 @@ class Butterfly {
         this.velocity.y = this.velocity.y * -1;
       }
 
-      // if over a resting spot, randomly take a rest
+      // if over a resting spot, randomly take a rest based on the amount of time since last rest
       if (this.over_surface()) {
         let should_rest = random(10000);
         if (should_rest > (10000 - (i - this.rest_stop))) {
@@ -77,9 +77,7 @@ class Butterfly {
     // move on to the next imgage once every two iterations for moving, once every 6 for resting
     let f = this.resting ? floor(i / 6) : floor(i / 2);
     let img = images[(this.start_image + f) % 16]
-    //img.drawingContext.fillStyle = '#475731'
     image(img, 0, 0, this.size, this.size);
     pop();
-    //point(this.position.x, this.position.y);
   }
 }
