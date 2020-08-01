@@ -1,5 +1,3 @@
-// http-server -c-1 to run
-
 // colors
 const dark_pink = '#F2B7AE';
 const dark_gray = '#777271';
